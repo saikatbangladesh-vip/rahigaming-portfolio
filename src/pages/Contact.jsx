@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiTwitter, FiSend, FiCheck, FiMessageSquare, FiTv, FiPlay, FiInstagram } from 'react-icons/fi';
+import { FiMail, FiPhone, FiMapPin, FiGithub, FiLinkedin, FiSend, FiCheck, FiMessageSquare, FiPlay, FiInstagram, FiFacebook } from 'react-icons/fi';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { personalInfo, socialLinks } from '../data/portfolioData';
@@ -87,21 +87,22 @@ const Contact = () => {
 
   const getSocialIcon = (iconName) => {
     const icons = {
-      FiGithub: FiGithub,
-      FiLinkedin: FiLinkedin,
-      FiTwitter: FiTwitter,
-      FiMail: FiMail,
-      FiMessageSquare: FiMessageSquare,
-      FiTv: FiTv,
       FiPlay: FiPlay,
-      FiInstagram: FiInstagram
+      FiMessageSquare: FiMessageSquare,
+      FiPhone: FiPhone,
+      FiSend: FiSend,
+      FiInstagram: FiInstagram,
+      FiMail: FiMail,
+      FiFacebook: FiFacebook,
+      FiGithub: FiGithub,
+      FiLinkedin: FiLinkedin
     };
     const IconComponent = icons[iconName];
     return IconComponent ? <IconComponent size={20} /> : null;
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Header />
       
       {/* Hero Section */}
@@ -111,12 +112,12 @@ const Contact = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="heading-primary text-gray-900 dark:text-white mb-6">
               Get In Touch
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
               I&apos;d love to hear from you! Whether you have a project in mind, want to collaborate, or just want to say hello, feel free to reach out.
             </p>
           </motion.div>
@@ -126,7 +127,7 @@ const Contact = () => {
       {/* Contact Section */}
       <section className="section-padding bg-gray-50 dark:bg-gray-900">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -134,8 +135,8 @@ const Contact = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="card"
             >
-              <div className="p-8">
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+              <div className="p-6 sm:p-8">
+                <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
                   Send Me a Message
                 </h2>
                 
@@ -151,7 +152,7 @@ const Contact = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-800 text-gray-900 dark:text-white ${
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-800 text-gray-900 dark:text-white ${
                         errors.name 
                           ? 'border-red-500 dark:border-red-500' 
                           : 'border-gray-300 dark:border-gray-600'
@@ -174,7 +175,7 @@ const Contact = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-800 text-gray-900 dark:text-white ${
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-800 text-gray-900 dark:text-white ${
                         errors.email 
                           ? 'border-red-500 dark:border-red-500' 
                           : 'border-gray-300 dark:border-gray-600'
@@ -197,7 +198,7 @@ const Contact = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-800 text-gray-900 dark:text-white ${
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-800 text-gray-900 dark:text-white ${
                         errors.subject 
                           ? 'border-red-500 dark:border-red-500' 
                           : 'border-gray-300 dark:border-gray-600'
@@ -220,7 +221,7 @@ const Contact = () => {
                       rows="6"
                       value={formData.message}
                       onChange={handleChange}
-                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none ${
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors duration-200 bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-none ${
                         errors.message 
                           ? 'border-red-500 dark:border-red-500' 
                           : 'border-gray-300 dark:border-gray-600'
@@ -243,7 +244,7 @@ const Contact = () => {
                         ? 'bg-green-600 text-white'
                         : isSubmitting
                         ? 'bg-gray-400 text-white cursor-not-allowed'
-                        : 'bg-yellow-600 hover:bg-yellow-700 text-white'
+                        : 'bg-primary-600 hover:bg-primary-700 text-white'
                     }`}
                   >
                     {isSubmitted ? (
@@ -276,21 +277,21 @@ const Contact = () => {
             >
               {/* Contact Details */}
               <div className="card">
-                <div className="p-8">
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+                <div className="p-6 sm:p-8">
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">
                     Contact Information
                   </h2>
                   
                   <div className="space-y-6">
                     <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-yellow-100 dark:bg-yellow-900/20 rounded-lg">
-                        <FiMail className="text-yellow-600 dark:text-yellow-400" size={20} />
+                      <div className="p-3 bg-primary-100 dark:bg-primary-900/20 rounded-lg">
+                        <FiMail className="text-primary-600 dark:text-primary-400" size={20} />
                       </div>
                       <div>
                         <h3 className="font-medium text-gray-900 dark:text-white mb-1">Email</h3>
                         <a 
                           href={`mailto:${personalInfo.email}`}
-                          className="text-gray-600 dark:text-gray-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors duration-200"
+                          className="text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                         >
                           {personalInfo.email}
                         </a>
@@ -298,14 +299,14 @@ const Contact = () => {
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-orange-100 dark:bg-orange-900/20 rounded-lg">
-                        <FiPhone className="text-orange-600 dark:text-orange-400" size={20} />
+                      <div className="p-3 bg-teal-100 dark:bg-teal-900/20 rounded-lg">
+                        <FiPhone className="text-teal-600 dark:text-teal-400" size={20} />
                       </div>
                       <div>
                         <h3 className="font-medium text-gray-900 dark:text-white mb-1">Phone</h3>
                         <a 
                           href={`tel:${personalInfo.phone}`}
-                          className="text-gray-600 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors duration-200"
+                          className="text-gray-600 dark:text-gray-300 hover:text-teal-600 dark:hover:text-teal-400 transition-colors duration-200"
                         >
                           {personalInfo.phone}
                         </a>
@@ -313,8 +314,8 @@ const Contact = () => {
                     </div>
 
                     <div className="flex items-start space-x-4">
-                      <div className="p-3 bg-red-100 dark:bg-red-900/20 rounded-lg">
-                        <FiMapPin className="text-red-600 dark:text-red-400" size={20} />
+                      <div className="p-3 bg-forest-100 dark:bg-forest-900/20 rounded-lg">
+                        <FiMapPin className="text-forest-600 dark:text-forest-400" size={20} />
                       </div>
                       <div>
                         <h3 className="font-medium text-gray-900 dark:text-white mb-1">Location</h3>
@@ -429,7 +430,7 @@ const Contact = () => {
               >
                 <div className="p-6">
                   <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center">
-                    <FiMessageSquare className="text-yellow-600 dark:text-yellow-400 mr-3" size={20} />
+                    <FiMessageSquare className="text-primary-600 dark:text-primary-400 mr-3" size={20} />
                     {faq.question}
                   </h3>
                   <p className="text-gray-600 dark:text-gray-300 leading-relaxed">

@@ -115,16 +115,16 @@ const Header = () => {
       }`}
     >
       <nav className="container-custom">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-3 px-4 sm:px-6 lg:px-8">
           {/* Enhanced Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
+          <Link to="/" className="flex items-center space-x-2 sm:space-x-3 group">
             <motion.div 
               whileHover={{ scale: 1.1, rotate: 10 }}
               whileTap={{ scale: 0.9 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
               className="relative"
             >
-              <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 p-0.5 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-primary-400 via-forest-500 to-teal-500 p-0.5 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
                 <div className="w-full h-full rounded-2xl bg-white dark:bg-gray-900 p-1 relative overflow-hidden">
                   <img 
                     src="/logo.png" 
@@ -147,7 +147,7 @@ const Header = () => {
             
             {/* Enhanced Text */}
             <div>
-              <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+              <h1 className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-primary-600 to-forest-600 bg-clip-text text-transparent">
                 {personalInfo.name}
               </h1>
               <p className="text-xs text-gray-500 dark:text-gray-400 -mt-1 hidden sm:block">
@@ -167,14 +167,14 @@ const Header = () => {
                 <span
                   className={`text-sm font-medium transition-colors duration-200 ${
                     isActivePath(item.path)
-                      ? 'text-yellow-600 dark:text-yellow-400'
-                      : 'text-gray-700 dark:text-gray-300 hover:text-yellow-600 dark:hover:text-yellow-400'
+                      ? 'text-primary-600 dark:text-primary-400'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
                   }`}
                 >
                   {item.name}
                 </span>
                 <motion.span
-                  className="absolute -bottom-1 left-0 h-0.5 bg-yellow-600 dark:bg-yellow-400"
+                  className="absolute -bottom-1 left-0 h-0.5 bg-primary-600 dark:bg-primary-400"
                   initial={{ width: 0 }}
                   animate={{ width: isActivePath(item.path) ? '100%' : 0 }}
                   transition={{ duration: 0.2 }}
@@ -184,13 +184,13 @@ const Header = () => {
           </div>
 
           {/* Search, Theme Toggle & Mobile Menu Button */}
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-1 sm:space-x-2 md:space-x-3">
             {/* Search Button */}
             <motion.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={toggleSearch}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-yellow-100 dark:hover:bg-yellow-900/20 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors duration-200"
+              className="p-2.5 sm:p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900/20 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Search"
             >
               <FiSearch size={18} />
@@ -201,7 +201,7 @@ const Header = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={toggleTheme}
-              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+              className="p-2.5 sm:p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Toggle theme"
             >
               <AnimatePresence mode="wait">
@@ -234,7 +234,7 @@ const Header = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={toggleMenu}
-              className="md:hidden p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200"
+              className="md:hidden p-2.5 sm:p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Toggle menu"
             >
               <AnimatePresence mode="wait">
@@ -285,10 +285,10 @@ const Header = () => {
                     <Link
                       to={item.path}
                       onClick={() => setIsOpen(false)}
-                      className={`block px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 ${
+                      className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors duration-200 min-h-[48px] flex items-center ${
                         isActivePath(item.path)
-                          ? 'bg-yellow-50 dark:bg-yellow-900/20 text-yellow-600 dark:text-yellow-400'
-                          : 'text-gray-700 dark:text-gray-300 hover:bg-yellow-50 dark:hover:bg-gray-800'
+                          ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400'
+                          : 'text-gray-700 dark:text-gray-300 hover:bg-primary-50 dark:hover:bg-gray-800'
                       }`}
                     >
                       {item.name}
@@ -331,7 +331,7 @@ const Header = () => {
                       onClick={toggleSearch}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.9 }}
-                      className="p-1.5 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200"
+                      className="p-2.5 rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
                       aria-label="Close search"
                     >
                       <FiX size={20} />
@@ -344,7 +344,7 @@ const Header = () => {
                       placeholder="Search pages, projects..."
                       value={searchQuery}
                       onChange={(e) => handleSearch(e.target.value)}
-                      className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
+                      className="w-full pl-10 pr-4 py-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400"
                       autoFocus
                     />
                   </div>
@@ -360,11 +360,11 @@ const Header = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: index * 0.05 }}
                         onClick={() => handleSearchSelect(result)}
-                        className="w-full text-left p-4 hover:bg-gray-50 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 last:border-b-0 transition-colors duration-200"
+                        className="w-full text-left p-4 sm:p-4 hover:bg-gray-50 dark:hover:bg-gray-800 border-b border-gray-100 dark:border-gray-800 last:border-b-0 transition-colors duration-200 min-h-[60px] flex items-center"
                       >
                         <div className="flex items-center space-x-3">
                           <div className={`w-2 h-2 rounded-full ${
-                            result.type === 'page' ? 'bg-blue-500' : 'bg-yellow-500'
+                            result.type === 'page' ? 'bg-teal-500' : 'bg-primary-500'
                           }`} />
                           <div className="flex-1">
                             <h4 className="font-medium text-gray-900 dark:text-gray-100">
@@ -376,7 +376,7 @@ const Header = () => {
                                 : result.description
                               }
                             </p>
-                            <span className="text-xs text-yellow-600 dark:text-yellow-400 mt-1 inline-block capitalize">
+                            <span className="text-xs text-primary-600 dark:text-primary-400 mt-1 inline-block capitalize">
                               {result.type === 'page' ? 'Page' : result.category}
                             </span>
                           </div>
@@ -401,11 +401,11 @@ const Header = () => {
                     <p className="text-sm">Start typing to search through pages and projects</p>
                     <div className="flex items-center justify-center space-x-4 mt-3 text-xs">
                       <span className="flex items-center space-x-1">
-                        <div className="w-2 h-2 bg-blue-500 rounded-full" />
+                        <div className="w-2 h-2 bg-teal-500 rounded-full" />
                         <span>Pages</span>
                       </span>
                       <span className="flex items-center space-x-1">
-                        <div className="w-2 h-2 bg-yellow-500 rounded-full" />
+                        <div className="w-2 h-2 bg-primary-500 rounded-full" />
                         <span>Projects</span>
                       </span>
                     </div>

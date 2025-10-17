@@ -7,7 +7,7 @@ import { personalInfo, skills, experience, education } from '../data/portfolioDa
 
 const About = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Header />
       
       {/* Hero Section */}
@@ -17,17 +17,17 @@ const About = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="heading-primary text-gray-900 dark:text-white mb-6">
               About Me
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
               Get to know more about my background, skills, and experience
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Profile Section */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -36,9 +36,9 @@ const About = () => {
               className="space-y-6"
             >
               <div className="text-center lg:text-left">
-                <div className="w-36 h-36 mx-auto lg:mx-0 mb-6 relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 rounded-3xl animate-pulse-slow blur-sm opacity-60"></div>
-                  <div className="relative w-full h-full bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 rounded-3xl p-0.5 shadow-xl">
+                <div className="w-28 h-28 sm:w-32 sm:h-32 md:w-36 md:h-36 mx-auto lg:mx-0 mb-6 relative group">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-400 via-forest-500 to-teal-500 rounded-3xl animate-pulse-slow blur-sm opacity-60"></div>
+                  <div className="relative w-full h-full bg-gradient-to-br from-primary-400 via-forest-500 to-teal-500 rounded-3xl p-0.5 shadow-xl">
                     <div className="w-full h-full bg-white dark:bg-gray-900 rounded-3xl p-1.5 relative overflow-hidden">
                       <img 
                         src="/logo.png" 
@@ -52,7 +52,7 @@ const About = () => {
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
                   </div>
                 </div>
-                <h2 className="text-3xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent mb-2">
+                <h2 className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-forest-600 bg-clip-text text-transparent mb-2">
                   {personalInfo.name}
                 </h2>
                 <p className="text-lg text-gray-700 dark:text-gray-300 font-medium mb-4">
@@ -113,7 +113,7 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {skills.map((skillCategory, categoryIndex) => (
               <motion.div
                 key={skillCategory.category}
@@ -147,7 +147,7 @@ const About = () => {
                         </div>
                         <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                           <motion.div
-                            className="bg-gradient-to-r from-yellow-500 to-orange-500 h-2 rounded-full"
+                            className="bg-gradient-to-r from-primary-500 to-forest-500 h-2 rounded-full"
                             initial={{ width: 0 }}
                             whileInView={{ width: `${tech.level}%` }}
                             viewport={{ once: true }}
@@ -198,7 +198,7 @@ const About = () => {
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
                         {exp.position}
                       </h3>
-                      <p className="text-lg text-yellow-600 dark:text-yellow-400 font-medium mb-2">
+                      <p className="text-lg text-primary-600 dark:text-primary-400 font-medium mb-2">
                         {exp.company}
                       </p>
                     </div>
@@ -225,7 +225,7 @@ const About = () => {
                     <ul className="space-y-1">
                       {exp.achievements.map((achievement, achIndex) => (
                         <li key={achIndex} className="text-gray-600 dark:text-gray-300 text-sm flex items-start">
-                          <span className="text-yellow-600 dark:text-yellow-400 mr-2 mt-1.5">•</span>
+                          <span className="text-primary-600 dark:text-primary-400 mr-2 mt-1.5">•</span>
                           {achievement}
                         </li>
                       ))}
@@ -236,7 +236,7 @@ const About = () => {
                     {exp.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-yellow-50 dark:bg-yellow-900/20 text-yellow-700 dark:text-yellow-300 text-xs rounded-full"
+                        className="px-3 py-1 bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-300 text-xs rounded-full"
                       >
                         {tech}
                       </span>
@@ -283,7 +283,7 @@ const About = () => {
                       <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
                         {edu.degree}
                       </h3>
-                      <p className="text-lg text-yellow-600 dark:text-yellow-400 font-medium mb-2">
+                      <p className="text-lg text-primary-600 dark:text-primary-400 font-medium mb-2">
                         {edu.institution}
                       </p>
                     </div>
@@ -313,7 +313,7 @@ const About = () => {
                         {edu.relevant.map((course) => (
                           <span
                             key={course}
-                            className="px-3 py-1 bg-orange-50 dark:bg-orange-900/20 text-orange-700 dark:text-orange-300 text-xs rounded-full"
+                            className="px-3 py-1 bg-forest-50 dark:bg-forest-900/20 text-forest-700 dark:text-forest-300 text-xs rounded-full"
                           >
                             {course}
                           </span>

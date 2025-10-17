@@ -3,43 +3,48 @@ export const personalInfo = {
   name: "Rahi Gaming",
   title: "Gaming Content Creator",
   tagline: "Creating epic gaming content and building communities",
-  email: "rahi.gaming@example.com",
-  phone: "+1 (555) 123-4567",
-  location: "San Francisco, CA",
+  email: "mdmynulislam5000@gmail.com",
+  phone: "+8801985740696",
+  location: "Rajshahi, BD",
   bio: "Passionate gaming content creator with 5+ years of experience in streaming, video production, and community building. I create engaging gaming content, build amazing communities, and help gamers level up their skills across multiple platforms.",
   profileImage: "/api/placeholder/300/300", // Placeholder image
-  resume: "/resume.pdf"
+  resume: "/about"
 };
 
 export const socialLinks = [
   {
-    name: "Twitch",
-    url: "https://twitch.tv/rahigaming",
-    icon: "FiTv"
-  },
-  {
     name: "YouTube",
-    url: "https://youtube.com/@rahigaming",
+    url: "https://youtube.com/@Mr.RahiGaming",
     icon: "FiPlay"
   },
   {
+    name: "Facebook",
+    url: "https://facebook.com/prorahigaming",
+    icon: "FiFacebook"
+  },
+  {
     name: "Discord",
-    url: "https://discord.gg/rahigaming",
+    url: "https://dsc.gg/rahigaming",
     icon: "FiMessageSquare"
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com/rahigaming",
-    icon: "FiTwitter"
+    name: "WhatsApp",
+    url: "https://wa.me/+8801985740696",
+    icon: "FiPhone"
+  },
+  {
+    name: "Telegram",
+    url: "https://t.me/prorahigaming",
+    icon: "FiSend"
   },
   {
     name: "Instagram",
-    url: "https://instagram.com/rahigaming",
+    url: "https://instagram.com/prorahigaming",
     icon: "FiInstagram"
   },
   {
     name: "Email",
-    url: "mailto:rahi.gaming@example.com",
+    url: "mailto:mdmynulislam5000@gmail.com",
     icon: "FiMail"
   }
 ];
@@ -145,14 +150,20 @@ export const education = [
   }
 ];
 
-import projectImage from '../assets/images/image.jpg';
+// Import all project images
+import epicGamingMontages from '../assets/images/Epic Gaming Montages.jpg';
+import liveGamingStreams from '../assets/images/Live Gaming Streams.jpg';
+import gamingTutorials from '../assets/images/Gaming Tutorials & Guides.jpg';
+import gamingCommunityDiscord from '../assets/images/Gaming Community Discord.jpg';
+import gameReviews from '../assets/images/Game Reviews & First Impressions.jpg';
+import gamingPodcast from '../assets/images/Gaming Podcast Series.jpg';
 
 export const projects = [
   {
     id: 1,
     title: "Epic Gaming Montages",
     description: "High-energy gaming montages featuring epic plays, clutch moments, and incredible highlights from various games. Each video is carefully edited with custom effects and music.",
-    image: projectImage,
+    image: epicGamingMontages,
     technologies: ["Adobe Premiere Pro", "After Effects", "Photoshop", "OBS Studio"],
     features: [
       "Custom visual effects and transitions",
@@ -163,14 +174,14 @@ export const projects = [
       "YouTube optimization and SEO"
     ],
     githubUrl: null,
-    liveUrl: "https://youtube.com/@rahigaming/montages",
+    liveUrl: "https://youtube.com/@Mr.RahiGaming/montages",
     category: "Video Content"
   },
   {
     id: 2,
     title: "Live Gaming Streams",
     description: "Interactive live streaming experience with custom overlays, chat integration, and real-time viewer engagement across multiple gaming titles.",
-    image: projectImage,
+    image: liveGamingStreams,
     technologies: ["OBS Studio", "Streamlabs", "Discord Bots", "Stream Deck"],
     features: [
       "Custom stream overlays and alerts",
@@ -188,7 +199,7 @@ export const projects = [
     id: 3,
     title: "Gaming Tutorials & Guides",
     description: "Comprehensive gaming tutorials covering strategies, tips, tricks, and complete walkthroughs for popular games, helping viewers improve their gameplay.",
-    image: projectImage,
+    image: gamingTutorials,
     technologies: ["Screen Recording", "Video Editing", "Graphic Design", "Content Planning"],
     features: [
       "Step-by-step gameplay guides",
@@ -199,14 +210,14 @@ export const projects = [
       "Community feedback integration"
     ],
     githubUrl: null,
-    liveUrl: "https://youtube.com/@rahigaming/tutorials",
+    liveUrl: "https://youtube.com/@Mr.RahiGaming/tutorials",
     category: "Gaming Content"
   },
   {
     id: 4,
     title: "Gaming Community Discord",
     description: "A thriving Discord community with custom bots, gaming events, tournaments, and active moderation fostering positive gaming culture.",
-    image: projectImage,
+    image: gamingCommunityDiscord,
     technologies: ["Discord.js", "Node.js", "Database Management", "Community Tools"],
     features: [
       "Custom Discord bots and commands",
@@ -217,14 +228,14 @@ export const projects = [
       "Multi-game LFG (Looking for Group) channels"
     ],
     githubUrl: null,
-    liveUrl: "https://discord.gg/rahigaming",
+    liveUrl: "https://dsc.gg/rahigaming",
     category: "Community"
   },
   {
     id: 5,
     title: "Game Reviews & First Impressions",
     description: "Honest and detailed game reviews covering gameplay mechanics, graphics, story, and overall experience to help viewers make informed gaming decisions.",
-    image: projectImage,
+    image: gameReviews,
     technologies: ["Game Capture", "Review Framework", "Rating System", "Comparative Analysis"],
     features: [
       "Comprehensive scoring system",
@@ -235,14 +246,14 @@ export const projects = [
       "Recommendation algorithms"
     ],
     githubUrl: null,
-    liveUrl: "https://youtube.com/@rahigaming/reviews",
+    liveUrl: "https://youtube.com/@Mr.RahiGaming/reviews",
     category: "Gaming Content"
   },
   {
     id: 6,
     title: "Gaming Podcast Series",
     description: "Weekly gaming podcast discussing industry news, game releases, interviews with developers, and community discussions about gaming culture.",
-    image: projectImage,
+    image: gamingPodcast,
     technologies: ["Audio Recording", "Podcast Editing", "Multi-platform Distribution", "Guest Management"],
     features: [
       "Weekly episode releases",

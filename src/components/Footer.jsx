@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FiTv, FiPlay, FiMessageSquare, FiTwitter, FiInstagram, FiMail, FiArrowUp, FiMapPin } from 'react-icons/fi';
+import { FiPlay, FiMessageSquare, FiPhone, FiSend, FiInstagram, FiMail, FiArrowUp, FiMapPin, FiFacebook } from 'react-icons/fi';
 import { personalInfo, socialLinks } from '../data/portfolioData';
 
 const Footer = () => {
@@ -13,12 +13,13 @@ const Footer = () => {
 
   const getSocialIcon = (iconName) => {
     const icons = {
-      FiTv: FiTv,
       FiPlay: FiPlay,
       FiMessageSquare: FiMessageSquare,
-      FiTwitter: FiTwitter,
+      FiPhone: FiPhone,
+      FiSend: FiSend,
       FiInstagram: FiInstagram,
-      FiMail: FiMail
+      FiMail: FiMail,
+      FiFacebook: FiFacebook
     };
     const IconComponent = icons[iconName];
     return IconComponent ? <IconComponent size={20} /> : null;
@@ -51,7 +52,7 @@ const Footer = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 className="relative"
               >
-                <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-yellow-400 via-orange-500 to-red-500 p-0.5 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
+                <div className="relative w-12 h-12 rounded-2xl bg-gradient-to-br from-primary-400 via-forest-500 to-teal-500 p-0.5 shadow-xl group-hover:shadow-2xl transition-shadow duration-300">
                   <div className="w-full h-full rounded-2xl bg-white dark:bg-gray-900 p-1 relative overflow-hidden">
                     <img 
                       src="/logo.png" 
@@ -74,7 +75,7 @@ const Footer = () => {
               
               {/* Enhanced Text - Same as Header */}
               <div>
-                <h1 className="text-xl font-bold bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+                <h1 className="text-xl font-bold bg-gradient-to-r from-primary-600 to-forest-600 bg-clip-text text-transparent">
                   {personalInfo.name}
                 </h1>
                 <p className="text-xs text-gray-500 dark:text-gray-400 -mt-1">
@@ -98,7 +99,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.2, y: -2 }}
                   whileTap={{ scale: 0.9 }}
-                  className="text-gray-500 dark:text-gray-400 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors duration-200"
+                  className="text-gray-500 dark:text-gray-400 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200"
                   aria-label={social.name}
                 >
                   {getSocialIcon(social.icon)}
@@ -120,9 +121,9 @@ const Footer = () => {
                 >
                   <Link
                     to={item.path}
-                    className="text-sm text-gray-600 dark:text-gray-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors duration-200 flex items-center space-x-2"
+                    className="text-sm text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 flex items-center space-x-2"
                   >
-                    <span className="w-1 h-1 bg-yellow-500 rounded-full"></span>
+                    <span className="w-1 h-1 bg-primary-500 rounded-full"></span>
                     <span>{item.name}</span>
                   </Link>
                 </motion.div>
@@ -136,8 +137,8 @@ const Footer = () => {
               Get In Touch
             </h4>
             <div className="space-y-4">
-              <a href={`mailto:${personalInfo.email}`} className="flex items-center space-x-3 text-sm text-gray-600 dark:text-gray-300 hover:text-yellow-600 dark:hover:text-yellow-400 transition-colors duration-200 group">
-                <FiMail className="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-yellow-500 transition-colors duration-200" />
+              <a href={`mailto:${personalInfo.email}`} className="flex items-center space-x-3 text-sm text-gray-600 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition-colors duration-200 group">
+                <FiMail className="w-4 h-4 text-gray-400 dark:text-gray-500 group-hover:text-primary-500 transition-colors duration-200" />
                 <span>{personalInfo.email}</span>
               </a>
               <div className="flex items-center space-x-3 text-sm text-gray-600 dark:text-gray-300">
@@ -160,7 +161,7 @@ const Footer = () => {
           <div className="flex justify-between items-center">
             {/* Copyright */}
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              © {currentYear} {personalInfo.name}. All Rights Reserved.
+             Copyright © {currentYear} {personalInfo.name}. All Rights Reserved.
             </p>
 
             {/* Back to Top Button */}

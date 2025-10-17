@@ -36,19 +36,23 @@
 /* Custom components */
 @layer components {
   .btn-primary {
-    @apply bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-500/50 transform hover:-translate-y-0.5 active:translate-y-0;
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 sm:px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary-500/50 transform hover:-translate-y-0.5 active:translate-y-0 min-h-[48px] text-sm sm:text-base;
   }
   
   .btn-secondary {
-    @apply bg-white/10 backdrop-blur-sm hover:bg-yellow-50/80 dark:bg-gray-800/50 dark:hover:bg-yellow-900/20 text-gray-900 dark:text-gray-100 font-semibold py-3 px-8 rounded-xl border border-yellow-200/50 dark:border-yellow-700/50 shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-500/30 transform hover:-translate-y-0.5 active:translate-y-0;
+    @apply bg-white/10 backdrop-blur-sm hover:bg-primary-50/80 dark:bg-gray-800/50 dark:hover:bg-primary-900/20 text-gray-900 dark:text-gray-100 font-semibold py-3 px-6 sm:px-8 rounded-xl border border-primary-200/50 dark:border-primary-700/50 shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary-500/30 transform hover:-translate-y-0.5 active:translate-y-0 min-h-[48px] text-sm sm:text-base;
   }
   
   .btn-outline {
-    @apply bg-transparent border-2 border-yellow-600 text-yellow-600 hover:bg-yellow-600 hover:text-gray-900 dark:border-yellow-400 dark:text-yellow-400 dark:hover:bg-yellow-400 dark:hover:text-gray-900 font-semibold py-3 px-8 rounded-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-500/30 transform hover:-translate-y-0.5 active:translate-y-0;
+    @apply bg-transparent border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-400 dark:hover:text-gray-900 font-semibold py-3 px-6 sm:px-8 rounded-xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-primary-500/30 transform hover:-translate-y-0.5 active:translate-y-0 min-h-[48px] text-sm sm:text-base;
   }
   
   .card {
     @apply bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl shadow-xl border border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+  }
+  
+  .card img {
+    @apply w-full h-auto object-cover;
   }
   
   .card-glass {
@@ -56,15 +60,15 @@
   }
   
   .section-padding {
-    @apply py-20 px-4 sm:px-6 lg:px-8;
+    @apply py-12 sm:py-16 md:py-20;
   }
   
   .container-custom {
-    @apply max-w-7xl mx-auto;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-yellow-500 to-orange-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-500 to-forest-500 bg-clip-text text-transparent;
   }
   
   .text-gradient-secondary {
@@ -72,7 +76,7 @@
   }
   
   .gradient-border {
-    @apply relative before:absolute before:inset-0 before:rounded-2xl before:p-[1px] before:bg-gradient-to-r before:from-yellow-600 before:to-orange-600;
+    @apply relative before:absolute before:inset-0 before:rounded-2xl before:p-[1px] before:bg-gradient-to-r before:from-primary-600 before:to-forest-600;
   }
   
   .code-font {
@@ -84,15 +88,47 @@
   }
   
   .heading-primary {
-    @apply text-4xl md:text-5xl lg:text-6xl font-black tracking-tight;
+    @apply text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tight;
   }
   
   .heading-secondary {
-    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
   }
   
   .heading-tertiary {
-    @apply text-2xl md:text-3xl font-bold tracking-tight;
+    @apply text-xl sm:text-2xl md:text-3xl font-bold tracking-tight;
+  }
+  
+  .img-responsive {
+    @apply w-full h-auto max-w-full object-cover;
+  }
+  
+  .img-avatar {
+    @apply w-full h-full object-cover rounded-full;
+  }
+  
+  .space-y-responsive {
+    @apply space-y-4 sm:space-y-6 md:space-y-8;
+  }
+  
+  .space-x-responsive {
+    @apply space-x-4 sm:space-x-6 md:space-x-8;
+  }
+  
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 md:gap-8;
+  }
+  
+  .p-responsive {
+    @apply p-4 sm:p-6 md:p-8;
+  }
+  
+  .px-responsive {
+    @apply px-4 sm:px-6 md:px-8;
+  }
+  
+  .py-responsive {
+    @apply py-4 sm:py-6 md:py-8;
   }
 }
 
@@ -109,7 +145,7 @@
 
 /* Loading animation */
 .loading-spinner {
-  @apply w-8 h-8 border-4 border-yellow-200 border-t-yellow-600 rounded-full animate-spin;
+  @apply w-8 h-8 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin;
 }
 
 /* Animation delays */
@@ -163,10 +199,10 @@
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 20px rgba(255, 235, 59, 0.5);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
   }
   50% {
-    box-shadow: 0 0 30px rgba(255, 235, 59, 0.8);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.8);
   }
 }
 
@@ -187,10 +223,10 @@
 
 @keyframes neon-glow {
   0%, 100% {
-    text-shadow: 0 0 5px #f59e0b, 0 0 10px #f59e0b, 0 0 15px #f59e0b, 0 0 20px #f59e0b;
+    text-shadow: 0 0 5px #10b981, 0 0 10px #10b981, 0 0 15px #10b981, 0 0 20px #10b981;
   }
   50% {
-    text-shadow: 0 0 10px #f59e0b, 0 0 20px #f59e0b, 0 0 30px #f59e0b, 0 0 40px #f59e0b;
+    text-shadow: 0 0 10px #10b981, 0 0 20px #10b981, 0 0 30px #10b981, 0 0 40px #10b981;
   }
 }
 
@@ -246,4 +282,26 @@
 
 .animate-bounce-slow {
   animation: bounce-slow 3s ease-in-out infinite;
+}
+
+/* Responsive media queries for better control */
+@media (max-width: 640px) {
+  .container-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container-custom {
+    max-width: 1280px;
+  }
+  
+  .heading-primary {
+    font-size: 5rem;
+  }
+  
+  .heading-secondary {
+    font-size: 3.5rem;
+  }
 }

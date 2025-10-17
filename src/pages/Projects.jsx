@@ -4,7 +4,6 @@ import { FiExternalLink, FiGithub, FiFilter } from 'react-icons/fi';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { projects } from '../data/portfolioData';
-import projectImage from '../assets/images/image.jpg';
 
 const Projects = () => {
   const [filter, setFilter] = useState('All');
@@ -17,7 +16,7 @@ const Projects = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-yellow-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-primary-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       <Header />
       
       {/* Hero Section */}
@@ -27,12 +26,12 @@ const Projects = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-12 sm:mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="heading-primary text-gray-900 dark:text-white mb-6">
               My Projects
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed px-4">
               Gaming projects and content showcasing creativity and engagement
             </p>
           </motion.div>
@@ -42,7 +41,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-12"
+            className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8 sm:mb-12"
           >
             {/* Mobile Filter Dropdown */}
             <div className="sm:hidden relative">
@@ -73,7 +72,7 @@ const Projects = () => {
                         }}
                         className={`w-full text-left px-4 py-2 text-sm transition-colors duration-200 first:rounded-t-lg last:rounded-b-lg ${
                           filter === category
-                            ? 'bg-yellow-50 dark:bg-yellow-900/20 text-yellow-600 dark:text-yellow-400'
+                            ? 'bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400'
                             : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700'
                         }`}
                       >
@@ -95,7 +94,7 @@ const Projects = () => {
                   whileTap={{ scale: 0.95 }}
                   className={`px-6 py-2 rounded-lg font-medium transition-all duration-200 ${
                     filter === category
-                      ? 'bg-yellow-600 text-white shadow-lg'
+                      ? 'bg-primary-600 text-white shadow-lg'
                       : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 border border-gray-200 dark:border-gray-700'
                   }`}
                 >
@@ -121,7 +120,7 @@ const Projects = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"
             >
               {filteredProjects.map((project, index) => (
                 <motion.div
@@ -135,7 +134,7 @@ const Projects = () => {
                   {/* Project Image */}
                   <div className="aspect-video relative overflow-hidden bg-gray-200 dark:bg-gray-700">
                     <img 
-                      src={projectImage} 
+                      src={project.image} 
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     />
@@ -175,12 +174,12 @@ const Projects = () => {
                   </div>
 
                   {/* Project Content */}
-                  <div className="p-6">
+                  <div className="p-4 sm:p-6">
                     <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-xl font-semibold text-gray-900 dark:text-white group-hover:text-yellow-600 dark:group-hover:text-yellow-400 transition-colors duration-200">
+                      <h3 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200">
                         {project.title}
                       </h3>
-                      <span className="px-2 py-1 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-700 dark:text-yellow-300 text-xs rounded-md">
+                      <span className="px-2 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-300 text-xs rounded-md">
                         {project.category}
                       </span>
                     </div>
