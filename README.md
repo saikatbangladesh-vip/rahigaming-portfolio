@@ -233,9 +233,9 @@ This project is licensed under the MIT License.
 
 ## 📞 Contact
 
-- **Email**: rahi.gaming@example.com
-- **Website**: [https://rahigaming.github.io](https://rahigaming.github.io)
-- **Discord**: discord.gg/rahigaming
+- **Email**: `sorry`
+- **Website**: `sorry`
+- **Discord**: `sorry`
 
 ## 🙏 Acknowledgments
 
